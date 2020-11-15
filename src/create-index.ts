@@ -7,10 +7,10 @@ const client = new Es.Client({
 
 const createDoc = async () => {
   const sleep = () => new Promise((resolve) => setTimeout(resolve, 1000));
-  let idx = 18000;
   const loop = true;
+  let idx = 0;
   while (loop) {
-    idx++;
+    ++idx;
     let temp = Math.round((Math.random() * (35 - 20) + 20) * 10000) / 10000;
     if (idx % 100 === 0) temp = 100;
     const param = {
