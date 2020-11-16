@@ -6,7 +6,7 @@ const client = new Es.Client({
   node: 'http://localhost:9200',
 });
 
-const bulk = async () => {
+const bulkIndex = async () => {
   const result = await client.helpers.bulk({
     datasource: createReadStream('output.ndjson').pipe(split()),
     onDocument() {
@@ -18,4 +18,4 @@ const bulk = async () => {
   console.log(result);
 };
 
-bulk().catch(console.log);
+bulkIndex().catch(console.log);

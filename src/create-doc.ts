@@ -11,11 +11,11 @@ const createDoc = async () => {
   let idx = 0;
   while (loop) {
     ++idx;
-    let temp = Math.round((Math.random() * (35 - 20) + 20) * 10000) / 10000;
-    if (idx % 100 === 0) temp = 100;
+    let value = Math.round((Math.random() * (35 - 20) + 20) * 10000) / 10000;
+    if (idx % 100 === 0) value = 100;
     const param = {
-      id: idx,
-      temperature: temp,
+      sequence: idx,
+      value: value,
       timestamp: DateTime.local().toISO(),
     };
     console.log('Create Doc:', JSON.stringify(param));
